@@ -1,0 +1,32 @@
+version: v1beta1
+plugins:
+  - name: go
+    out: gen/go
+    opt: paths=source_relative
+  - name: java
+    out: gen/java
+  - name: python
+    out: gen/python
+  - name: php
+    out: gen/php
+  - name: js
+    out: gen/js
+    opt: import_style=commonjs,binary
+  - name: cpp
+    out: gen/cpp
+
+  - name: go-grpc
+    out: gen/go
+    opt: paths=source_relative,require_unimplemented_servers=false
+  - name: grpc_python
+    path: grpc_python_plugin
+    out: gen/python
+  - name: grpc_php
+    path: grpc_php_plugin
+    out: gen/php
+  - name: grpc_node_plugin
+    path: grpc_node_plugin
+    out: gen/js
+  - name: grpc_cpp_plugin
+    path: grpc_cpp_plugin
+    out: gen/cpp
